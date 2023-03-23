@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-page-main</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .main .content-section {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 38px;
+    }
+
+    .main .content-section .left-content {
+      height: 26px;
+    }
+
+    .main .content-section .left-content .content-thema,
+    .main .content-section .right-content .content-thema {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .main .content-section .left-content .content-thema .center {
+      width: 140px;
+      height: 100%;
+      line-height: 100%;
+      padding-left: 30px;
+      box-sizing: border-box;
+      font-size: 22px;
+      color: #323235;
+      background: url(./img/main_sprite.png) no-repeat 0 -108px;
+    }
+
+    .main .content-section .right-content .content-thema .hero {
+      width: 140px;
+      height: 100%;
+      line-height: 100%;
+      padding-left: 30px;
+      box-sizing: border-box;
+      font-size: 22px;
+      color: #323235;
+      background: url(./img/main_sprite.png) no-repeat 0 -144px;
+    }
+
+    .main .content-section .left-content .content-thema .more,
+    .main .content-section .right-content .content-thema .more {
+      display: block;
+      width: 50px;
+      height: 21px;
+      line-height: 21px;
+      font-size: 14px;
+      text-align: center;
+      color: #999;
+      padding-left: 22px;
+      box-sizing: border-box;
+      background: url(./img/main_sprite.png) no-repeat -252px 4px;
+    }
+
+    .main .content-section .left-content .content-center {
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    .main .content-section .left-content .content-center .content-nav {
+      display: flex;
+      justify-content: space-around;
+      height: 29px;
+      background-color: #f5f5f5;
+    }
+
+    .main .content-section .left-content .content-center .content-nav .nav-item {
+      width: 289px;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .main .content-section .left-content .content-center .content-nav .nav-item a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      top: 50%;
+      transform: translateY(-36%);
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+    }
+
+    .main .content-section .left-content .content-center .content-nav .nav-item .border {
+      display: block;
+      width: 1px;
+      height: 20px;
+      background-color: #e1e1e1;
+    }
+
+    .main .content-section .left-content .content-center .content-wrap {
+      width: 872px;
+      height: 410px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .main .content-section .left-content .content-center .content-wrap .content-lists {
+      width: 2616px;
+      height: 410px;
+      position: absolute;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .main .content-section .left-content .content-center .content-wrap .content-lists .content-item-wrap {
+      width: 872px;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .main .content-section .left-content .content-center .content-wrap .content-lists .content-item {
+      width: 212px;
+      height: 175px;
+    }
+
+    .main .content-section .left-content .content-center .content-wrap .content-lists .content-item .item-top {
+      position: relative;
+    }
+
+    .main .content-section .left-content .content-center .content-wrap .content-lists .content-item .item-top a {
+      display: block;
+      width: 100%;
+    }
+
+    .main .content-section .left-content .content-center .content-wrap .content-lists .content-item .item-top a img {
+      width: 209px;
+      height: 125px;
+    }
+
+
+    .main .content-section .left-content .content-center .content-wrap .content-lists .content-item .item-top .cover {
+      display: none;
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, .6);
+
+      transition: all 300ms ease-in;
+    }
+
+
+    .main .content-section .left-content .content-center .content-wrap .content-lists .content-item .item-top:hover .cover {
+      display: block;
+      animation: itemCoverAnim 300ms ease-in forwards;
+    }
+
+    @keyframes itemCoverAnim {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .main .content-section .left-content .content-center .content-wrap .content-lists .content-item .item-top .cover .icon_play {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 40px;
+      height: 40px;
+      background: url(./img/main_sprite.png) no-repeat -192px -64px;
+    }
+
+    .main .content-section .left-content .content-center .content-wrap .content-lists .content-item .item-top .bot {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 209px;
+      height: 22px;
+      padding: 0 8px;
+      box-sizing: border-box;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .main .content-section .left-content .content-center .content-wrap .content-lists .content-item .item-top .bot .count {
+      width: 28px;
+      padding-left: 15px;
+      color: #fff;
+      font-size: 12px;
+      text-align: center;
+      background: url(./img/main_sprite.png) no-repeat -256px -62px;
+    }
+
+    .main .content-section .left-content .content-center .content-wrap .content-lists .content-item .item-top .bot .time {
+      color: #fff;
+      font-size: 12px;
+    }
+
+    .main .content-section .left-content .content-center .content-wrap .content-lists .content-item .item-bottom a {
+      display: block;
+      width: 212px;
+      height: 40px;
+      color: #333335;
+      font-size: 14px;
+      margin-top: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .main .content-section .right-content {
+      height: 26px;
+    }
+
+    .main .content-section .right-content .hero-wrapper {
+      /* width: ; */
+      margin-top: 16px;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 29px;
+      background-color: #F5F5F5;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-nav .hero-item {
+      width: 97px;
+      height: 26px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-nav .hero-item a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      top: 50%;
+      transform: translateY(-36%);
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-nav .hero-item .grap {
+      width: 1px;
+      height: 20px;
+      background-color: #e1e1e1;
+    }
+
+    .main .content-section .right-content .hero-wrapper {
+      width: 294px;
+    }
+
+    .main .content-section .right-content .hero-wrapper .wrapper {
+      margin-top: 15px;
+      width: 294px;
+      height: 419px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-wrap {
+      width: 882px;
+      height: 419px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      position: absolute;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-wrap .hero-cont {
+      width: 294px;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-wrap .hero-cont .top a {
+      width: 294px;
+      display: block;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-wrap .hero-cont .top a img {
+      width: 294px;
+      height: 156px;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-wrap .hero-cont .desc {
+      width: 294px;
+      height: 67px;
+      padding: 10px 15px;
+      box-sizing: border-box;
+      box-sizing: border-box;
+      border: 1px solid #e5e5e5;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-wrap .hero-cont .desc span {
+      display: block;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-wrap .hero-cont .desc .name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-wrap .hero-cont .desc .time {
+      font-size: 12px;
+      color: #999;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-wrap .hero-cont .hero-lists {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items:center;
+      width: 100%;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-wrap .hero-cont:nth-child(3) .hero-lists{
+      margin-top:-65px;
+    }
+
+
+    .main .content-section .right-content .hero-wrapper .hero-wrap .hero-cont .hero-lists li {
+      width: 68px;
+      height: 173;
+      margin-top: 12px;
+    }
+
+    .main .content-section .right-content .hero-wrapper .hero-wrap .hero-cont .hero-lists li a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main main_wrapper">
+    <div class="content-section">
+      <div class="left-content">
+        <div class="content-thema">
+          <h3 class="center">内容中心</h3>
+          <a href="#" class="more">更多</a>
+
+        </div>
+        <div class="content-center">
+          <ul class="content-nav">
+            <li class="nav-item">
+              <a href="#">精品栏目</a>
+              <span class="border"></span>
+            </li>
+            <li class="nav-item">
+              <a href="#">赛事精品</a>
+              <span class="border"></span>
+            </li>
+            <li class="nav-item">
+              <a href="#">英雄攻略</a>
+            </li>
+          </ul>
+          <div class="content-wrap">
+            <div class="content-lists">
+              <div class="content-item-wrap">
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_01.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第88期 无视野锁定 峡谷“爱你”科技版</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_02.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第45期：英雄特性放大，他们原来还有不一样的玩法！</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_03.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第87期 精准飞扇空气？黑科技已被锁定</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_04.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第86期 开透视解说？队友大义灭亲极度舒适</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_05.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录44】：人形雷达，发育路大杀器李元芳</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_06.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】诸葛上手指南，一个大招贯穿整个峡谷</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_07.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第85期 抓获草外狂徒 无视野乱杀疑点重重</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_08.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第42期：转职成功，峡谷新晋野王报道！</a>
+                  </p>
+                </div>
+              </div>
+              <div class="content-item-wrap">
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_09.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【王者炸麦了】暖阳自曝肺活量差，无畏重唱经典曲库再扩充</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img//video_album_09.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【王者炸麦了】春季赛偷家特辑</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_09.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【王者炸麦了】武汉ES续写“魔王”传奇，春日星光闪耀总决赛</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_10.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【王者炸麦了】春季赛决出三强，狼星会师总决赛“不当逃兵”</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_12.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【王者炸麦了】季后赛开启高燃模式，重庆狼队全员“狗塑”自己</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_12.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【王者炸麦了】XYG成功战胜武汉ES，暖阳调侃星宇三连MVP</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_12.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【王者炸麦了】梦岚乔兮各自摘五杀，鹏鹏一步之差“强颜欢笑”</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_12.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第42期：转职成功，峡谷新晋野王报道！</a>
+                  </p>
+                </div>
+              </div>
+              <div class="content-item-wrap">
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_13.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">674</span>
+                      <span class="time">2022-05-28</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">国服选手教你玩貂蝉——全面了解貂蝉</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_13.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-28</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">突破操作瓶颈——貂蝉无伤越塔细节整理</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_13.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">1869</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">突破操作瓶颈——貂蝉无伤越塔细节整理</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_14.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">15449</span>
+                      <span class="time">2022-06-01</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">貂蝉高胜率对局思路（后期）——边路单带引领团战</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_14.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-06-01</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">貂蝉高胜率对局思路（中期）——灵活的三角挂边</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_14.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-06-01</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">貂蝉高胜率对局思路（前期）——拉满CD稳定发育</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_14.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">貂蝉高胜率对局思路（前期）——拉满CD稳定发育</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_14.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">貂蝉高胜率对局思路（前期）——拉满CD稳定发育</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right-content">
+        <div class="content-thema">
+          <h3 class="hero">英雄/皮肤</h3>
+          <a href="#" class="more">更多</a>
+        </div>
+        <div class="hero-wrapper">
+          <ul class="hero-nav">
+            <li class="hero-item">
+              <a href="#">最新英雄</a>
+              <span class="grap"></span>
+            </li>
+            <li class="hero-item">
+              <a href="#">最新皮肤</a>
+              <span class="grap"></span>
+            </li>
+            <li class="hero-item"><a href="#">周免英雄</a></li>
+          </ul>
+          <div class="wrapper">
+            <div class="hero-wrap">
+              <div class="hero-cont">
+                <a href="#" class="top">
+                  <img src="./img/new_hero.webp" alt="桑启">
+                </a>
+                <p class="desc">
+                  <span class="name">新英雄：桑启</span>
+                  <span class="time">上线时间:2022.04.14</span>
+                </p>
+                <ul class="hero-lists">
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/霏.webp" alt="">
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/center.webp" alt="">
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/yunying.webp" alt="">
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/aili.webp" alt="">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="hero-cont">
+                <a href="#" class="top">
+                  <img src="./img/change.webp" alt="嫦娥">
+                </a>
+                <p class="desc">
+                  <span class="name">新皮肤：挚爱之嫁-大桥 </span>
+                  <span class="time">上线时间:2022.05.20</span>
+                </p>
+                <ul class="hero-lists">
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/lan.webp" alt="">
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/ke.jpg" alt="">
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/lin.webp" alt="">
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/liushan.webp" alt="">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="hero-cont">
+                <ul class="hero-lists">
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/lan.webp" alt="">
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/ke.jpg" alt="">
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/lin.webp" alt="">
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/liushan.webp" alt="">
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/aili.webp" alt="">
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/霏.webp" alt="">
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/center.webp" alt="">
+                    </a>
+                  </li>
+                  <li class="item">
+                    <a href="#">
+                      <img src="./img/yunying.webp" alt="">
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/content-center.js"></script>
+</body>
+
+</html>

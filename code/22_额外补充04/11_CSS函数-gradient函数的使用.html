@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 150px;
+
+      /* 简单使用 默认是从上到下 */
+      /* background-image: linear-gradient(red, blue); */
+
+      /* 指定方向 */
+      /* background-image: linear-gradient(to right, red, blue); */
+
+      /* 右上角 */
+      /* background-image: linear-gradient(to right top, red, blue); */
+
+      /* 度数 */
+      /* background-image: linear-gradient(45deg, red, blue); */
+
+      /* 多种颜色 */
+      /* background-image: linear-gradient(to right, blue, orange 50px, #bfa 50px, #f00); */
+
+      /* 径向渐变 */
+      /* 默认，从中心到四周 */
+      background-image: radial-gradient(red, blue);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ！！！要注意渐变，是图片渐变，而不是颜色，设置的是图片 -->
+  <!-- 渐变主要分为两种：线性渐变和径向渐变 -->
+  <div class="box"></div>
+</body>
+
+</html>

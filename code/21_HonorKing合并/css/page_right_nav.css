@@ -1,0 +1,64 @@
+.right-nav {
+  position: fixed;
+  width: 254px;
+  height: 494px;
+  right: 0;
+  top: 150px;
+  z-index: -999px;
+  background: url(../img/r_navBg.png) no-repeat top left;
+}
+
+.right-nav .wxapp {
+  position: relative;
+  width: 165px;
+  height: 145px;
+  background: url(../img/r_dj.png) no-repeat top center;
+}
+
+.right-nav .wxapp span {
+  display: block;
+  position: absolute;
+  top: 35px;
+  left: 10px;
+  width: 88px;
+  height: 36px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #62401b;
+}
+
+.right-nav .nav-item {
+  margin-left: 70px;
+}
+
+.right-nav .nav-item li a {
+  display: block;
+  width: 117px;
+  height: 38px;
+  text-indent: -9999px;
+}
+
+.right-nav .nav-item .item {
+  width: 117px;
+  height: 113px;
+  padding-left: 3px;
+  padding-top: 3px;
+  background: url(../img/right_all.png) no-repeat 0 -3px;
+}
+
+.right-nav .nav-item .item .pic {
+  width: 111px;
+  height: 110px;
+}
+
+.right-nav .nav-item .wb {
+  background: url(../img/right_all.png) no-repeat -122px -120px;
+}
+
+.right-nav .nav-item .wx {
+  background: url(../img/right_all.png) no-repeat -122px -160px;
+}
+
+.right-nav .nav-item .wv {
+  background: url(../img/right_all.png) no-repeat -122px 0px;
+}

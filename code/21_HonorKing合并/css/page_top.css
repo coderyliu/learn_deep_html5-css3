@@ -1,0 +1,70 @@
+.top {
+  width: 100%;
+  border: 1px solid #f5f5f5;
+}
+
+.top .area {
+  display: flex;
+  justify-content: space-around;
+  /* 如果不写align-items默认是normal,也就是stretch会伸长 */
+  /* align-items: stretch; */
+  height: 41px;
+  line-height: 41px;
+}
+
+.top_wrapper .left-area {
+  display: flex;
+}
+
+.top_wrapper .left-area .logo a {
+  display: block;
+  width: 150px;
+  background: url(../img/top_logo.png) no-repeat center center;
+  /* 让字体消失 */
+  text-indent: -999px;
+}
+
+.top_wrapper .right-area {
+  display: flex;
+}
+
+.top_wrapper .right-area .item a {
+  display: block;
+  position: relative;
+  font-size: 14px;
+  color: #464646;
+}
+
+.top_wrapper .right-area .item .growth {
+  padding-left: 30px;
+}
+
+.top_wrapper .right-area .item .icon-grow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  background: url(../img/top_sprite.png) no-repeat -30px 0;
+}
+
+.top_wrapper .right-area .item {
+  margin-left: 30px;
+}
+
+.top_wrapper .right-area .item .ranking::after {
+  content: '';
+  background: url(../img/top_sprite.png) no-repeat 0 0;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: -30px;
+  bottom: 0;
+  margin: auto 0;
+
+  opacity: 0.2;
+  transform: rotate(90deg);
+}

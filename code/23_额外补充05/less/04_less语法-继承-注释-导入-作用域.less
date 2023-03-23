@@ -1,0 +1,26 @@
+// ? 1.继承
+.border_sheet {
+  border: 1px solid #f00;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  // todo 继承的使用
+  // &:extend(.border_sheet);
+
+  // todo 混入
+  .border_sheet();
+
+  .nowrap_attr();
+}
+
+// ? 2.注释
+// todo less中既支持单行注释也支持多行注释
+
+// ?3.导入
+@import url(./mixins.less);
+
+// ?4.作用域
+// todo 这个概念和var函数使用变量的css作用域的概念一样

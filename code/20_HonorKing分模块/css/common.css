@@ -1,0 +1,23 @@
+/* 全局公共的配置文件 */
+.top_wrapper {
+  width: 980px;
+  margin: 0 auto;
+}
+
+/* 头部区域 */
+.header_wrapper {
+  width: 1300px;
+  margin: 0 auto;
+}
+
+/* 主体区域 */
+.main_wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* 底部区域 */
+.footer_wrapper{
+  width: 1200px;
+  margin:0 auto;
+}

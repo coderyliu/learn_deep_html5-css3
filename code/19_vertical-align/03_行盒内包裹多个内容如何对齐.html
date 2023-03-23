@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: orange;
+    }
+
+    .box img {
+      width: 200px;
+    }
+
+    .box .small {
+      display: inline-block;
+      width: 100px;
+      height: 200px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 那么，既然有了行盒的存在，这个行盒内可以有文字，图片，行内级元素等等，浏览器是如何保证这些元素的对齐方式? -->
+  <!-- 这个对齐方式是由css属性:vertical-align来决定的 -->
+  <!-- 
+    默认是baseline---基线对齐，不同元素的基线是不一样的，比如文字的基线，用英文来准确表示的话以x英文字母的下方为准
+    图片，行内元素的基线是元素的下方!!!
+    这也就造成了行内元素、图片下方经典的三像素问题!!!
+    实际上，行盒必须包裹所有的元素以及基线上方的元素，因此，默认情况下，基线对齐，j,g的基线没办法包裹
+    所以只能包裹整个元素，而图片，行内元素的基线和字母的基线并不一样，浏览器为了保证文字j,g等能够被包裹，就提前预留了3px,
+    所有，图片下方的三像素是基线对齐造成的!!!
+  -->
+  <div class="box">
+    我是普通的文本, 323fdafdafxqgxxx322
+    <img src="../images/kobe01.jpg" alt="">
+    <span class="small"></span>
+  </div>
+
+</body>
+
+</html>

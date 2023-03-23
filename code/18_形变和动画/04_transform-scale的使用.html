@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 400px;
+      height: 200px;
+      line-height: 200px;
+      margin: 200px auto;
+
+      background-color: orange;
+    }
+
+    .container .box {
+      width: 200px;
+      height: 100px;
+      background-color: purple;
+      margin: 0 auto;
+    }
+
+    .box:hover {
+      /* scale时进行缩放的形变函数，一个值就是设置x,两个值设置x,y,也可以通过scaleX()或者scaleY()来设置 */
+      /* 缩放的单位可以是整数1/2,1.5等等，也可以是%,也是相对于自身的width/height */
+      /* 0-1是缩小，1-2是放大 */
+      transform: scale(2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="box"></div>
+  </div>
+
+</body>
+
+</html>

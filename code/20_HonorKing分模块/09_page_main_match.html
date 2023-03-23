@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-page-match</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .main .match-section {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      margin-top: 28px;
+    }
+
+    .main .match-section .left {
+      width: 872px;
+    }
+
+    .main .match-section .right {
+      width: 294px;
+    }
+
+    .main .match-section .left .header,
+    .main .match-section .right .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 24px;
+    }
+
+    .main .match-section .left .header .title,
+    .main .match-section .right .header .title {
+      width: 140px;
+      height: 24px;
+    }
+
+    .main .match-section .left .header .title a,
+    .main .match-section .right .header .title a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 100%;
+      padding-left: 12px;
+      box-sizing: border-box;
+      font-size: 22px;
+      color: #323235;
+      text-align: center;
+    }
+
+    .main .match-section .left .header .title a {
+      background: url(./img/main_sprite.png) no-repeat 0 -184px;
+    }
+
+
+    .main .match-section .right .header .title a {
+      background: url(./img/main_sprite.png) no-repeat -157px -106px;
+    }
+
+    .main .match-section .left .header .more,
+    .main .match-section .right .header .more {
+      display: block;
+      width: 28px;
+      height: 21px;
+      padding-left: 22px;
+      font-size: 14px;
+      color: #999;
+      background: url(./img/main_sprite.png) no-repeat -252px 4px;
+    }
+
+    .main .match-section .right .header .shop {
+      display: block;
+      width: 70px;
+      height: 22px;
+      padding-left: 22px;
+      box-sizing: border-box;
+      border: 1px solid #f3c258;
+      font-size: 14px;
+      text-align: center;
+      background: url(./img/main_sprite.png) no-repeat -243px -85px;
+    }
+
+    .main .match-section .left .nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 25px;
+      background-color: #f5f5f5;
+    }
+
+    .main .match-section .left .nav .item {
+      height: 29px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .main .match-section .left .nav li {
+      width: 100%;
+    }
+
+    .main .match-section .left .nav a {
+      display: block;
+      width: 100%;
+      height: 29px;
+      line-height: 29px;
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+    }
+
+    .main .match-section .left .nav span {
+      display: block;
+      width: 1px;
+      height: 20px;
+      background-color: #e1e1e1;
+    }
+
+    .main .match-section .left .content {
+      width: 872px;
+      height: 685px;
+      margin-top: 19px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .main .match-section .left .content .cont-wrapper {
+      width: 6104px;
+      /* width: 972px; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap {
+      width: 872px;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .top {
+      width: 872px;
+      height: 260px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .top .logo {
+      display: block;
+      width: 211px;
+      height: 260px;
+      margin-right: 19px;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .top .listing {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 630px;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .top .listing .list-title {
+      width: 100%;
+      height: 32px;
+      margin-bottom: 3px;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .top .listing .list-title a {
+      display: block;
+      width: 100%;
+      height: 32px;
+      line-height: 32px;
+      font-size: 22px;
+      color: #333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .top .listing .list-title a:hover {
+      text-decoration: underline;
+    }
+
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .top .listing .list-mt {
+      width: 100%;
+      height: 14px;
+      margin-bottom: 10px;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .top .listing .list-mt a {
+      display: block;
+      width: 100%;
+      height: 14px;
+      line-height: 14px;
+      font-size: 14px;
+      color: #666;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .top .listing .list {
+      width: 100%;
+      height: 23px;
+      margin-bottom: 9px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .top .listing .list .match-tag {
+      width: 48px;
+      height: 19px;
+      line-height: 19px;
+      border: 1px solid #e3e3e3;
+      border-radius: 10px;
+      font-size: 12px;
+      color: #999;
+      text-align: center;
+      background-color: #e3e3e3;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .top .listing .list a {
+      display: block;
+      width: 470px;
+      height: 21px;
+      margin-left: -20px;
+      font-size: 14px;
+      color: #337;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .top .listing .list .match-time {
+      display: block;
+      width: 43px;
+      height: 18px;
+      line-height: 18px;
+      font-size: 12px;
+      color: #b8b9c5;
+      text-align: center;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .item-wrap {
+      width: 872px;
+      height: 410px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .item-wrap .content-item {
+      width: 212px;
+      height: 175px;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .item-wrap .content-item .item-top {
+      position: relative;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .item-wrap .content-item .item-top a {
+      display: block;
+      width: 100%;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .item-wrap .content-item .item-top a img {
+      width: 209px;
+      height: 125px;
+    }
+
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .item-wrap .content-item .item-top .cover {
+      display: none;
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, .6);
+
+      transition: all 300ms ease-in;
+    }
+
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .item-wrap .content-item .item-top:hover .cover {
+      display: block;
+      animation: itemCoverAnim 300ms ease-in forwards;
+    }
+
+    @keyframes itemCoverAnim {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .item-wrap .content-item .item-top .cover .icon_play {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 40px;
+      height: 40px;
+      background: url(./img/main_sprite.png) no-repeat -192px -64px;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .item-wrap .content-item .item-top .bot {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 209px;
+      height: 22px;
+      padding: 0 8px;
+      box-sizing: border-box;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .item-wrap .content-item .item-top .bot .count {
+      width: 28px;
+      padding-left: 15px;
+      color: #fff;
+      font-size: 12px;
+      text-align: center;
+      background: url(./img/main_sprite.png) no-repeat -256px -62px;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .item-wrap .content-item .item-top .bot .time {
+      color: #fff;
+      font-size: 12px;
+    }
+
+    .main .match-section .left .content .cont-wrapper .cont-wrap .item-wrap .content-item .item-bottom a {
+      display: block;
+      width: 212px;
+      height: 40px;
+      color: #333335;
+      font-size: 14px;
+      margin-top: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .main .match-section .right .nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 29px;
+      margin-top: 25px;
+      background-color: #f5f5f5;
+    }
+
+    .main .match-section .right .nav li {
+      font-size: 14px;
+      color: #999;
+      text-align: center;
+    }
+
+    .main .match-section .right .content {
+      width: 100%;
+    }
+
+    .main .match-section .right .content .top {
+      width: 100%;
+      height: 68px;
+      border-bottom: 1px solid #e5e5e5;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 19px;
+    }
+
+    .main .match-section .right .content .top span {
+      display: block;
+    }
+
+    .main .match-section .right .content .top .time {
+      width: 80px;
+      height: 67px;
+      line-height: 67px;
+      font-size: 12px;
+      color: #333;
+      text-align: center;
+    }
+
+    .main .match-section .right .content .top .team{
+      width: 79px;
+      height: 67px;
+      line-height: 67px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .main .match-section .right .content .top .team img{
+      width: 25px;
+      height: 25px;
+    }
+
+    .main .match-section .right .content .top .team span{
+      width: 73px;
+      height: 24px;
+      line-height: 24px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .main .match-section .right .content .top .patch{
+      width: 43px;
+      height: 67px;
+      line-height: 67px;
+      font-size: 14px;
+      color:#f3c258;
+      text-align: center;
+    }
+
+    .main .match-section .right .content .top .bottom {
+      display: block;
+      width: 100%;
+      height: 159px;
+      margin-bottom: 19px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main main_wrapper">
+    <div class="match-section">
+      <div class="left">
+        <div class="header">
+          <h3 class="title">
+            <a href="#">赛事中心</a>
+          </h3>
+          <a href="#" class="more">更多</a>
+        </div>
+        <ul class="nav">
+          <a href="#" class="item">KPL</a>
+          <span class="grap"></span>
+          <a href="#" class="item">挑战者杯</a>
+          <span class="grap"></span>
+          <a href="#" class="item">K甲联赛</a>
+          <span class="grap"></span>
+          <a href="#" class="item">全国大赛</a>
+          <span class="grap"></span>
+          <a href="#" class="item">高效联赛</a>
+          <span class="grap"></span>
+          <a href="#" class="item">TGA</a>
+          <span class="grap"></span>
+          <a href="#" class="item">微信游戏邀请赛</a>
+          <span class="grap"></span>
+          <li class="item"></li>
+        </ul>
+        <div class="content">
+          <div class="cont-wrapper">
+            <div class="cont-wrap">
+              <div class="top">
+                <a href="#" class="logo">
+                  <img src="./img/match_01.jpg" alt="王者荣耀-并肩上场">
+                </a>
+                <ul class="listing">
+                  <li class="list-title">
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛选手大名单公布</a>
+                  </li>
+                  <li class="list-mt"><a href="#">
+                      2022年KPL王者荣耀职业联赛夏季赛选手大名单公布
+                    </a></li>
+                  <li class="list">
+                    <span class="match-tag">kpl</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛常规赛第一轮赛程</a>
+                    <span class="match-time">05-28</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">kpl</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛制介绍</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">kpl</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛事日历</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">kpl</span>
+                    <a href="#">王者荣耀职业联赛（KPL）2022夏季赛赛事规则</a>
+                    <span class="match-time">05-25</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">kpl</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部合约到期选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">kpl</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部挂牌选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="item-wrap">
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_01.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第88期 无视野锁定 峡谷“爱你”科技版</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_02.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第45期：英雄特性放大，他们原来还有不一样的玩法！</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_03.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第87期 精准飞扇空气？黑科技已被锁定</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_04.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第86期 开透视解说？队友大义灭亲极度舒适</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_05.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录44】：人形雷达，发育路大杀器李元芳</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_06.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】诸葛上手指南，一个大招贯穿整个峡谷</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_07.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第85期 抓获草外狂徒 无视野乱杀疑点重重</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_08.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第42期：转职成功，峡谷新晋野王报道！</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="cont-wrap">
+              <div class="top">
+                <a href="#" class="logo">
+                  <img src="./img/change.jpg" alt="王者荣耀-并肩上场">
+                </a>
+                <ul class="listing">
+                  <li class="list-title">
+                    <a href="#">王者荣耀赛事竞猜系统公告</a>
+                  </li>
+                  <li class="list-mt"><a href="#">
+                      王者荣耀赛事竞猜系统公告
+                    </a></li>
+                  <li class="list">
+                    <span class="match-tag">挑战者</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛常规赛第一轮赛程</a>
+                    <span class="match-time">05-28</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">挑战者</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛制介绍</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">挑战者</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛事日历</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">挑战者</span>
+                    <a href="#">王者荣耀职业联赛（KPL）2022夏季赛赛事规则</a>
+                    <span class="match-time">05-25</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">挑战者</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部合约到期选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">挑战者</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部挂牌选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="item-wrap">
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_01.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第88期 无视野锁定 峡谷“爱你”科技版</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_02.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第45期：英雄特性放大，他们原来还有不一样的玩法！</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_03.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第87期 精准飞扇空气？黑科技已被锁定</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_04.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第86期 开透视解说？队友大义灭亲极度舒适</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_05.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录44】：人形雷达，发育路大杀器李元芳</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_06.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】诸葛上手指南，一个大招贯穿整个峡谷</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_07.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第85期 抓获草外狂徒 无视野乱杀疑点重重</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_08.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第42期：转职成功，峡谷新晋野王报道！</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="cont-wrap">
+              <div class="top">
+                <a href="#" class="logo">
+                  <img src="./img/hecai.jpg" alt="王者荣耀-并肩上场">
+                </a>
+                <ul class="listing">
+                  <li class="list-title">
+                    <a href="#">王者荣耀甲级职业联赛（K甲）2022夏季赛赛事规则</a>
+                  </li>
+                  <li class="list-mt"><a href="#">
+                      王者荣耀甲级职业联赛（K甲）2022夏季赛赛事规则
+                    </a></li>
+                  <li class="list">
+                    <span class="match-tag">k甲联赛</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛常规赛第一轮赛程</a>
+                    <span class="match-time">05-28</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">k甲联赛</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛制介绍</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">k甲联赛</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛事日历</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">k甲联赛</span>
+                    <a href="#">王者荣耀职业联赛（KPL）2022夏季赛赛事规则</a>
+                    <span class="match-time">05-25</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">k甲联赛</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部合约到期选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">k甲联赛</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部挂牌选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="item-wrap">
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_01.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第88期 无视野锁定 峡谷“爱你”科技版</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_02.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第45期：英雄特性放大，他们原来还有不一样的玩法！</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_03.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第87期 精准飞扇空气？黑科技已被锁定</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_04.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第86期 开透视解说？队友大义灭亲极度舒适</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_05.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录44】：人形雷达，发育路大杀器李元芳</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_06.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】诸葛上手指南，一个大招贯穿整个峡谷</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_07.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第85期 抓获草外狂徒 无视野乱杀疑点重重</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_08.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第42期：转职成功，峡谷新晋野王报道！</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="cont-wrap">
+              <div class="top">
+                <a href="#" class="logo">
+                  <img src="./img/country.jpg" alt="王者荣耀-并肩上场">
+                </a>
+                <ul class="listing">
+                  <li class="list-title">
+                    <a href="#">第五届王者荣耀全国大赛合作赛道冠军一览</a>
+                  </li>
+                  <li class="list-mt"><a href="#">
+                      第五届王者荣耀全国大赛合作赛道冠军一览
+                    </a></li>
+                  <li class="list">
+                    <span class="match-tag">全国大</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛常规赛第一轮赛程</a>
+                    <span class="match-time">05-28</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">全国大</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛制介绍</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">全国大</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛事日历</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">全国大</span>
+                    <a href="#">王者荣耀职业联赛（KPL）2022夏季赛赛事规则</a>
+                    <span class="match-time">05-25</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">全国大</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部合约到期选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">全国大</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部挂牌选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="item-wrap">
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_01.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第88期 无视野锁定 峡谷“爱你”科技版</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_02.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第45期：英雄特性放大，他们原来还有不一样的玩法！</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_03.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第87期 精准飞扇空气？黑科技已被锁定</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_04.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第86期 开透视解说？队友大义灭亲极度舒适</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_05.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录44】：人形雷达，发育路大杀器李元芳</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_06.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】诸葛上手指南，一个大招贯穿整个峡谷</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_07.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第85期 抓获草外狂徒 无视野乱杀疑点重重</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_08.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第42期：转职成功，峡谷新晋野王报道！</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="cont-wrap">
+              <div class="top">
+                <a href="#" class="logo">
+                  <img src="./img/zixin.jpg" alt="王者荣耀-并肩上场">
+                </a>
+                <ul class="listing">
+                  <li class="list-title">
+                    <a href="#">第八届王者荣耀高校联赛落下战幕！四川托普信息技术职业学院夺得总冠军</a>
+                  </li>
+                  <li class="list-mt"><a href="#">
+                      第八届王者荣耀高校联赛落下战幕！四川托普信息技术职业学院夺得总冠军
+                    </a></li>
+                  <li class="list">
+                    <span class="match-tag">高效联</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛常规赛第一轮赛程</a>
+                    <span class="match-time">05-28</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">高效联</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛制介绍</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">高效联</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛事日历</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">高效联</span>
+                    <a href="#">王者荣耀职业联赛（KPL）2022夏季赛赛事规则</a>
+                    <span class="match-time">05-25</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">高效联</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部合约到期选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">高效联</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部挂牌选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="item-wrap">
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_01.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第88期 无视野锁定 峡谷“爱你”科技版</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_02.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第45期：英雄特性放大，他们原来还有不一样的玩法！</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_03.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第87期 精准飞扇空气？黑科技已被锁定</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_04.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第86期 开透视解说？队友大义灭亲极度舒适</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_05.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录44】：人形雷达，发育路大杀器李元芳</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_06.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】诸葛上手指南，一个大招贯穿整个峡谷</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_07.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第85期 抓获草外狂徒 无视野乱杀疑点重重</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_08.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第42期：转职成功，峡谷新晋野王报道！</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="cont-wrap">
+              <div class="top">
+                <a href="#" class="logo">
+                  <img src="./img/TGA.jpg" alt="王者荣耀-并肩上场">
+                </a>
+                <ul class="listing">
+                  <li class="list-title">
+                    <a href="#">【战报】王者荣耀4月第二周C组：公孙离岑中归月 DC战队顺利登顶</a>
+                  </li>
+                  <li class="list-mt"><a href="#">
+                      【战报】王者荣耀4月第二周C组：公孙离岑中归月 DC战队顺利登顶
+                    </a></li>
+                  <li class="list">
+                    <span class="match-tag">kpl</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛常规赛第一轮赛程</a>
+                    <span class="match-time">05-28</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">kpl</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛制介绍</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">kpl</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛事日历</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">kpl</span>
+                    <a href="#">王者荣耀职业联赛（KPL）2022夏季赛赛事规则</a>
+                    <span class="match-time">05-25</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">kpl</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部合约到期选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">kpl</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部挂牌选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="item-wrap">
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_01.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第88期 无视野锁定 峡谷“爱你”科技版</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_02.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第45期：英雄特性放大，他们原来还有不一样的玩法！</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_03.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第87期 精准飞扇空气？黑科技已被锁定</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_04.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第86期 开透视解说？队友大义灭亲极度舒适</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_05.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录44】：人形雷达，发育路大杀器李元芳</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_06.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】诸葛上手指南，一个大招贯穿整个峡谷</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_07.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第85期 抓获草外狂徒 无视野乱杀疑点重重</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_08.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第42期：转职成功，峡谷新晋野王报道！</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="cont-wrap">
+              <div class="top">
+                <a href="#" class="logo">
+                  <img src="./img/wx.jpg" alt="王者荣耀-并肩上场">
+                </a>
+                <ul class="listing">
+                  <li class="list-title">
+                    <a href="#">坤音四子ONER率队决战峡谷，杨迪爆笑解说聚星之夜</a>
+                  </li>
+                  <li class="list-mt"><a href="#">
+                      坤音四子ONER率队决战峡谷，杨迪爆笑解说聚星之夜
+                    </a></li>
+                  <li class="list">
+                    <span class="match-tag">微信游</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛常规赛第一轮赛程</a>
+                    <span class="match-time">05-28</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">微信游</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛制介绍</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">微信游</span>
+                    <a href="#">2022年KPL王者荣耀职业联赛夏季赛赛事日历</a>
+                    <span class="match-time">05-26</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">微信游</span>
+                    <a href="#">王者荣耀职业联赛（KPL）2022夏季赛赛事规则</a>
+                    <span class="match-time">05-25</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">微信游</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部合约到期选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                  <li class="list">
+                    <span class="match-tag">微信游</span>
+                    <a href="#">2022年KPL夏季转会期俱乐部挂牌选手名单</a>
+                    <span class="match-time">05-22</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="item-wrap">
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_01.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第88期 无视野锁定 峡谷“爱你”科技版</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_02.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第45期：英雄特性放大，他们原来还有不一样的玩法！</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_03.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第87期 精准飞扇空气？黑科技已被锁定</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_04.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第86期 开透视解说？队友大义灭亲极度舒适</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_05.png" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录44】：人形雷达，发育路大杀器李元芳</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_06.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】诸葛上手指南，一个大招贯穿整个峡谷</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_07.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【狄仁杰封神榜】第85期 抓获草外狂徒 无视野乱杀疑点重重</a>
+                  </p>
+                </div>
+                <div class="content-item">
+                  <div class="item-top">
+                    <a href="#">
+                      <img src="./img/video_album_08.jpg" alt="百里守约">
+                    </a>
+                    <div class="bot">
+                      <span class="count">5449</span>
+                      <span class="time">2022-05-29</span>
+                    </div>
+                    <div class="cover">
+                      <i class="icon_play"></i>
+                    </div>
+                  </div>
+                  <p class="item-bottom">
+                    <a href="#">【马菠萝奇闻录】第42期：转职成功，峡谷新晋野王报道！</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="header">
+          <h3 class="title">
+            <a href="#">KPL赛程</a>
+          </h3>
+          <a href="#" class="shop">购票</a>
+          <a href="#" class="more">更多</a>
+        </div>
+        <ul class="nav">
+          <li>时间</li>
+          <li>战队</li>
+          <li>战队</li>
+        </ul>
+        <div class="content">
+          <div class="top">
+            <span class="time">5-8 18:00</span>
+            <span class="team">
+              <img src="./img/estar.png" alt="">
+              <span>武汉eStarPro</span>
+            </span>
+            <span class="patch">VS</span>
+            <span class="team">
+              <img src="./img/lang.png" alt="">
+              <span>重庆狼队</span>
+            </span>
+          </div>
+          <a href="#" class="bottom">
+            <img src="./img/match_schedule.webp" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/content-center.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @media screen and (min-width:320px) {
+      html {
+        font-size: 12px;
+      }
+    }
+
+    @media screen and (min-width:375px) {
+      html {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (min-width:414px) {
+      html {
+        font-size: 18px;
+      }
+    }
+
+    @media screen and (min-width:750px) {
+      html {
+        font-size: 20px;
+      }
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 方式一:通过媒体查询动态设置html的font-size来进行rem方式的移动端适配 -->
+  <!-- 
+    这种方式的弊端:
+      1.通过媒体查询的方式要写的代码很多
+      2.不是实时响应式的
+   -->
+  <div class="box"></div>
+  <span>哈哈哈</span>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+    早期，在html5以前，我们的网页想要插入视频/音频的文件处理，是无能为力的，因此我们通常借助一些第三方插件来解决这个问题
+    ，用的最广泛的就是flash,但是这带来两个问题：用户不愿意安装flash插件，并且兼容性也很差。
+    html5给我们提供了两个标签元素 audio和video来解决这个问题，并且既可以通过html5直接使用也可以通过js来进行控制
+   -->
+
+  <!--基本使用方式  常用的属性-->
+  <!-- src 本地地址或者服务器地址 --资源路径 -->
+  <!-- width  height  视频元素的宽高 -->
+  <!-- controls  是否显示视频下方的菜单栏进行控制 -->
+  <!-- autoplay 是否自动播放 -->
+  <!-- muted  是否静音 -->
+  <!-- preload   是否进行预加载  默认为auto有浏览器决定  还有none 和metadata -->
+  <!-- loop  是否循环播放 -->
+  <!-- 还有很多，还有source元素可以包裹，来解决浏览器的兼容性问题 -->
+  <video src="./assets/fcrs.mp4" autoplay controls width="600px" muted>
+    <source src="./assets/fcrs.mp4">
+    <!-- p标签表示最后没有可支持的视频格式显示的内容 -->
+    <p>抱歉，您当前浏览器不支持当前视频格式的播放，请换浏览器进行观看~</p>
+  </video>
+
+</body>
+
+</html>

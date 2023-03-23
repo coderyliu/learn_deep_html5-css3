@@ -1,0 +1,53 @@
+// less中支持单行注释，也支持多行注释
+/**/
+
+// 1.兼容css
+// .container {
+//   width: 200px;
+//   height: 200px;
+//   background-color: orange;
+// }
+
+// .container .box {
+//   width: 100px;
+//   height: 100px;
+//   background-color: #f00;
+// }
+
+// 2.less定义变量
+@mainColor: orange;
+
+@smallFontSize: 12px;
+@normalFontSize: 14px;
+@bigFontSize: 18px;
+
+// .container {
+//   .box {
+//     color: @mainColor;
+//   }
+// }
+
+// 3.嵌套
+.box {
+  .pel {
+    color: @mainColor;
+    font-size: @bigFontSize;
+  }
+
+  h1 {
+    .keyword {
+      color: #333;
+      font-size: @normalFontSize;
+    }
+  }
+
+  p {
+    a {
+      color: blue;
+
+      &:hover {
+        color: yellow;
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-top</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .top {
+      width: 100%;
+      border: 1px solid #f5f5f5;
+    }
+
+    .top .area {
+      display: flex;
+      justify-content: space-around;
+      /* 如果不写align-items默认是normal,也就是stretch会伸长 */
+      /* align-items: stretch; */
+      height: 41px;
+      line-height: 41px;
+    }
+
+    .top_wrapper .left-area {
+      display: flex;
+    }
+
+    .top_wrapper .left-area .logo a {
+      display: block;
+      width: 150px;
+      background: url('./img/top_logo.png') no-repeat center center;
+      /* 让字体消失 */
+      text-indent: -999px;
+    }
+
+    .top_wrapper .right-area {
+      display: flex;
+    }
+
+    .top_wrapper .right-area .item a {
+      display: block;
+      position: relative;
+      font-size: 14px;
+      color: #464646;
+    }
+
+    .top_wrapper .right-area .item .growth {
+      padding-left: 30px;
+    }
+
+    .top_wrapper .right-area .item .icon-grow {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      background: url(./img/top_sprite.png) no-repeat -30px 0;
+    }
+
+    .top_wrapper .right-area .item {
+      margin-left: 30px;
+    }
+
+    .top_wrapper .right-area .item .ranking::after {
+      content: '';
+      background: url(./img/top_sprite.png) no-repeat 0 0;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 0;
+      right: -30px;
+      bottom: 0;
+      margin: auto 0;
+
+      opacity: 0.2;
+      transform: rotate(90deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top">
+    <div class="top_wrapper area">
+      <div class="left-area">
+        <h2 class="logo">
+          <!-- 这个王者荣耀四个字其实最终是不可见的，写上的原因是为了搜索引擎更好的优化 -->
+          <a href="#">王者荣耀</a>
+        </h2>
+        <div class="recommand">
+          <img src="./img/recommend_game.jpg" alt="游戏推荐">
+        </div>
+      </div>
+      <ul class="right-area">
+        <li class="item">
+          <a href="#" class="growth">
+            <i class="icon-grow"></i>
+            成长守护平台
+          </a>
+        </li>
+        <li class="item">
+          <a href="#" class="ranking">腾讯游戏排行榜</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

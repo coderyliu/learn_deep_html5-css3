@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: inline-block;
+      border: 5px solid orange;
+    }
+
+    .container .box {
+      width: 200px;
+      height: 100px;
+      background-color: #f00;
+    }
+
+    .box:hover {
+      /* transform是css的一个属性，是形变的意思，只能对块级或者行内块进行形变，也就是说span,a,i等行内元素不能进行形变 */
+      /* transform是css的一个属性，可以用一些形变函数进行形变，包括平移，旋转，缩放，倾斜，
+        对应translate()/rotate()/scale()/skew()
+        他们这些形变函数都是支持3d/2d效果的，但是3d效果有点复杂，先暂时掌握2d效果
+        这些形变函数都是相对于水平方向，垂直方向设置的，z轴就是你看可视区域的方向
+      */
+
+      /* translate一个值只设置水平x轴,两个值设置水平和垂直方向，你也可以通过translateX或translateY()来设置 */
+      /* translate支持px，也支持百分比，百分比是相对于自身的，像width/height的百分比是相对于父元素的，所以不同的css属性的百分比的对象是不同的 */
+      transform: translate(80px);
+      transform: translateY(90px);
+      /* 注意：transform是不能叠加的，如果设置多个，只有最后一个生效，可以通过在一个形变上设置多个形变函数 */
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="box"></div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- html5新增了全局属性dataset,我们可以通过dataset和js进行数据传递，很友好 -->
+  <!-- 使用的方式就是通过data-*的方式来使用，在js中通过element.dataset来获取 -->
+  <div class="example" data-name="coder" data-age="21" data-height="1.88"></div>
+
+  <script>
+    const example = document.querySelector('.example')
+    console.log(example.dataset)
+  </script>
+</body>
+
+</html>

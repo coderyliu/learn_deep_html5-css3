@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      position: relative;
+    }
+
+    .container {
+      /* 给父元素开启绝对定位并不会影响子元素的高度，子元素块级元素还是块级元素 */
+      position: absolute;
+    }
+
+    .item {
+      /* 给子元素添加绝对定位才会影响子元素本身，块级元素变成行内级元素，脱离文档流，下面的元素往上走 */
+      position: absolute;
+      width: 200px;
+      height: 100px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="container">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </div>
+</body>
+
+</html>

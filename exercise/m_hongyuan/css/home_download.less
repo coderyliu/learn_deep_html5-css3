@@ -1,0 +1,59 @@
+@import url(./variables.less);
+
+.home {
+  .download {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100vw;
+    height: 16vw;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+
+    .logo {
+      width: 10.66667vw;
+      height: 10.66667vw;
+      line-height: 10.66667vw;
+      margin-left: 2.4vw;
+
+      border: 1px solid #eee;
+      border-radius: 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .desc {
+      span {
+        display: block;
+      }
+
+      .dark {
+        font-size: @normalFontSize;
+      }
+
+      .gray {
+        font-size: @smallFontSize;
+        color: #999;
+      }
+    }
+
+    .open {
+      width: 25.2vw;
+      font-size: @bigFontSize;
+      color: #fff;
+      text-align: center;
+
+      background-image: linear-gradient(to right, #f00, #ff3162);
+    }
+
+    a {
+      display: block;
+      height: 16vw;
+      line-height: 16vw;
+    }
+  }
+}

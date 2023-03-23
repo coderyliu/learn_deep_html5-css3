@@ -1,0 +1,167 @@
+.header {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.header:hover .hide-wrapper {
+  display: block;
+}
+
+.header .area {
+  display: flex;
+  justify-content: space-around;
+  height: 84px;
+}
+
+.header .area .left-area {
+  display: flex;
+}
+
+.header .area .left-area .logo a {
+  display: block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 54px;
+  background: url(../img/logo.png) no-repeat center center;
+  text-indent: -999px;
+}
+
+.header .area .left-area .nav-list {
+  display: flex;
+  margin-left: 30px;
+}
+
+.header .area .left-area .item {
+  width: 110px;
+  height: 100%;
+  margin-left: 5px;
+}
+
+.header .area .left-area .item a {
+  display: block;
+  height: 100%;
+  padding-top: 18px;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: #c9c9c9;
+  text-align: center;
+}
+
+.header .area .left-area .item a:hover,
+.header .area .left-area .item a:active {
+  color: #e4b653;
+  background: url(../img/main_sprite.png) no-repeat 0 0;
+}
+
+.header .area .left-area .item a .desc {
+  display: block;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #858792;
+}
+
+.header .area .left-area .item a:hover .desc,
+.header .area .left-area .item a:active .desc {
+  color: #91763f;
+}
+
+.header .area .left-area .search {
+  width: 38px;
+  height: 100%;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.header .area .left-area .search a {
+  display: block;
+  width: 27px;
+  height: 26px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(../img/nav_search.png) no-repeat center center;
+}
+
+.header .area .right-area {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header .area .right-area .login a {
+  display: block;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #d9ad50;
+  border-radius: 50%;
+  background: url(../img/header_login.png) no-repeat center center;
+}
+
+.header .area .right-area .info {
+  margin-left: 8px;
+}
+
+.header .area .right-area .info a {
+  display: block;
+  font-size: 16px;
+  color: #fff;
+}
+
+.header .area .right-area .info p {
+  font-size: 14px;
+  color: #858792;
+}
+
+.header .hide-wrapper {
+  display: none;
+  position: absolute;
+  top: 125px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .8);
+
+  transition:all 10s linear;
+}
+
+.header .hide-wrapper .hide {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 890px;
+  height: 240px;
+  margin: 0 auto;
+  padding: 15px 0 30px 50px;
+}
+
+.header .hide-wrapper .hide .item {
+  width: 110px;
+  height: 30px;
+}
+
+.header .hide-wrapper .hide .item a {
+  display: block;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #c9c9dd;
+  text-align: center;
+}
+
+.header .hide-wrapper .hide .item a:hover {
+  color: #e4b653;
+  text-decoration: underline;
+}
+
+.header .hide-wrapper .hide .item a .icon {
+  display: inline-block;
+  position: relative;
+  left: 0px;
+  /* bottom:-8px; */
+  width: 20px;
+  height: 24px;
+  vertical-align: middle;
+  background: url(../img/main_sprite.png) no-repeat -163px -68px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .item {
+      width: 900px;
+      height: 300px;
+      background-color: orange;
+    }
+
+    .item1 {
+      width: calc(100% - 200px);
+      height: 300px;
+      background-color: aqua;
+      display: inline-block;
+    }
+
+    .item2 {
+      width: 200px;
+      height: 300px;
+      background-color: blueviolet;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- calc主要是用来做css计算,可用于+,-,*,/运算，+/-前后必须有一个空格 -->
+  <div class="item">
+    <div class="item1"></div>
+    <div class="item2"></div>
+  </div>
+</body>
+
+</html>

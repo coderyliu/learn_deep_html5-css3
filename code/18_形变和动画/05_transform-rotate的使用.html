@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 400px;
+      height: 200px;
+      margin: 200px auto;
+
+      overflow: hidden;
+      background-color: orange;
+    }
+
+    .container .box {
+      width: 200px;
+      height: 100px;
+      background-color: purple;
+      margin-top: 50px;
+    }
+
+    .box:hover {
+      /* rotate()形变函数是设置旋转形变效果，相当于是rotateZ(),至于x/y涉及到3d效果 */
+      /* rotate()的单位常用的是deg,还有比如几圈turn,弧度rad */
+      /* rotate默认是相对于transform-origin:center center;为中心点进行旋转的，你也可以自己设置中心点 */
+      /* deg正值为顺指针旋转，负值为逆时针组旋转 */
+      transform: rotate(-45deg);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="box"></div>
+  </div>
+
+</body>
+
+</html>

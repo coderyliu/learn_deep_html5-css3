@@ -1,0 +1,10 @@
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: #bfa;
+}
+.box .content {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+}

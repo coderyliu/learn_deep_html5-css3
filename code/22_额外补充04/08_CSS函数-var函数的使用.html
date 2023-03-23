@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --main-color: #bfa;
+    }
+
+    .box {
+      width: 100px;
+      color: var(--main-color);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- var函数具有浏览器的兼容性，用来使用css中的变量 -->
+  <!-- css中的变量的定义方式:
+    --开头即可  --main-color:#f00;
+    使用方式:使用的时候必须在变量的作用域范围内使用，用var(--main-color);即可
+  -->
+  <div class="box">
+    哈哈哈
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- 
+    这个viewport就是视口的意思，在pc端不需要区分视觉视口与布局视口的概念，因为我们开发人员面向的就是布局视口与视觉视口
+    相等，所以不需要区分！但是移动端或者是移动端网页版就需要区分视口，主要分为视觉视口，布局视口，理想视口，正常情况下
+    如果一个pc网页在手机的浏览器打开的时候，我们的手机浏览器为了显示全部内容，会进行缩放，那么这时候就出现了视口的概念，
+    正常情况，我们默认浏览器的布局视口是980px,手机的视觉视口就是手机的width，这时候缩放就会进行比例缩放，我们设置的100px，
+    在移动端现实的时候就会缩放，如果我们不想要100px在移动端进行缩放，就出现了理想视口，就是通过meta标签进行设置，让我们的
+    布局视口===视觉视口，并且不让用户进行缩放就达到了我们的目的!!!
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+
+  </div>
+</body>
+
+</html>

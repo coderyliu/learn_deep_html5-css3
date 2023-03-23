@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-download</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .main .news-section {
+      display: flex;
+      width: 100%;
+      height: 342px;
+    }
+
+    .main .news-section .banner {
+      width: 604px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .main .news-section .banner .pics {
+      width: 3045px;
+      height: 298px;
+      position: absolute;
+      display: flex;
+    }
+
+    .main .news-section .banner .pics .pic {
+      display: block;
+    }
+
+    .main .news-section .banner .ban {
+      width: 604px;
+      height: 44px;
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      background-color: #0b0a0a;
+    }
+
+    .main .news-section .banner .ban .item {
+      width: 120.8px;
+      height: 100%;
+    }
+
+    .main .news-section .banner .ban .item a {
+      display: block;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: #b1b2be;
+      text-align: center;
+    }
+
+    .main .news-section .news {
+      flex: 1;
+      background-color: #323235;
+    }
+
+    .main .news-section .news .news-title {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      height: 48px;
+      padding: 0 20px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #000;
+    }
+
+    .main .news-section .news .news-title .title-item {
+      flex: 1;
+      height: 45px;
+    }
+
+    .main .news-section .news .news-title .title-item a {
+      display: block;
+      height: 45px;
+      line-height: 45px;
+      font-size: 14px;
+      color: #b8b9c5;
+      text-align: center;
+    }
+
+    .main .news-section .news .news-content {
+      width: 359px;
+      height: 289px;
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .main .news-section .news .news-content .content {
+      width: 1795px;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      position: absolute;
+    }
+
+    .main .news-section .news .news-content .content .content-wrap {
+      width: 319px;
+      height: 289px;
+    }
+
+    .main .news-section .news .news-content .content .content-wrap .content-title {
+      width: 100%;
+      height: 36px;
+      margin: 15px auto 0;
+      background-color: #414046;
+    }
+
+    .main .news-section .news .news-content .content .content-wrap .content-title a {
+      display: block;
+      position: relative;
+      top: 50%;
+      transform: translateY(-14px);
+      height: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 18px;
+      color: #f3c258;
+      text-align: center;
+      padding:0 10px;
+      box-sizing: border-box;
+    }
+
+    .main .news-section .news .news-content .content .content-wrap .content-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      /* align-items: center; */
+    }
+
+    .main .news-section .news .news-content .content .content-wrap .content-list .list-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+      height: 21px;
+      margin-top: 12px;
+    }
+
+    .main .news-section .news .news-content .content .content-wrap .content-list .list-item a {
+      display: block;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .main .news-section .news .news-content .content .content-wrap .content-list .list-item a .news-hot,
+    .main .news-section .news .news-content .content .content-wrap .content-list .list-item a .news-active {
+      display: block;
+      width: 38px;
+      height: 18px;
+      line-height: 14px;
+      border: 1px solid #ff3636;
+      box-sizing: border-box;
+      padding: 2px;
+      font-size: 12px;
+      color: #ff3636;
+      text-align: center;
+    }
+
+    .main .news-section .news .news-content .content .content-wrap .content-list .list-item a .news-notice {
+      display: block;
+      width: 38px;
+      height: 18px;
+      line-height: 14px;
+      border: 1px solid #f4be19;
+      box-sizing: border-box;
+      padding: 2px;
+      font-size: 12px;
+      color: #f4be19;
+      text-align: center;
+    }
+
+    .main .news-section .news .news-content .content .content-wrap .content-list .list-item a .news-news {
+      display: block;
+      width: 38px;
+      height: 18px;
+      line-height: 14px;
+      border: 1px solid #1e96ab;
+      box-sizing: border-box;
+      padding: 2px;
+      font-size: 12px;
+      color: #1e96ab;
+      text-align: center;
+    }
+
+    .main .news-section .news .news-content .content .content-wrap .content-list .list-item a .news-player {
+      display: block;
+      width: 38px;
+      height: 18px;
+      line-height: 14px;
+      border: 1px solid #4d9cff;
+      box-sizing: border-box;
+      padding: 2px;
+      font-size: 12px;
+      color: #4d9cff;
+      text-align: center;
+    }
+
+    .main .news-section .news .news-content .content .content-wrap .content-list .list-item a .news-news {
+      display: block;
+      width: 38px;
+      height: 18px;
+      line-height: 14px;
+      border: 1px solid #1e96ab;
+      box-sizing: border-box;
+      padding: 2px;
+      font-size: 12px;
+      color: #1e96ab;
+      text-align: center;
+    }
+
+    .main .news-section .news .news-content .content .content-wrap .content-list .list-item a .news-info {
+      width: 230px;
+      height: 21px;
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      color: #b8b9c5;
+      font-size: 14px;
+      margin-left: 4px;
+    }
+
+    .main .news-section .news .news-content .content .content-wrap .content-list .list-item .news-date {
+      display: block;
+      font-size: 12px;
+      color: #999;
+    }
+
+    .main .news-section .download {
+      width: 236px;
+    }
+
+    .main .news-section .download a {
+      display: block;
+      width: 100%;
+    }
+
+    .main .news-section .download .download-btn {
+      height: 128px;
+      background: url(./img/main_sprite.png) no-repeat 0 -219px;
+    }
+
+    .main .news-section .download .guard-btn {
+      height: 106px;
+      background: url(./img/main_sprite.png) no-repeat 0 -350px;
+    }
+
+    .main .news-section .download .exprience-btn {
+      height: 108px;
+      background: url(./img/main_sprite.png) no-repeat 0 -461px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main main_wrapper">
+    <div class="news-section">
+      <div class="banner">
+        <div class="pics">
+          <a href="#" class="pic">
+            <img src="./img/banner1.jpeg" alt="">
+          </a>
+          <a href="#" class="pic">
+            <img src="./img/banner2.jpeg" alt="">
+          </a>
+          <a href="#" class="pic">
+            <img src="./img/banner3.jpeg" alt="">
+          </a>
+          <a href="#" class="pic">
+            <img src="./img/banner4.jpeg" alt="">
+          </a>
+          <a href="#" class="pic">
+            <img src="./img/banner5.jpeg" alt="">
+          </a>
+        </div>
+        <ul class="ban">
+          <li class="item"><a href="#">场景票选结果</a></li>
+          <li class="item"><a href="#">高校联赛总决赛</a></li>
+          <li class="item"><a href="#">大招已经好了</a></li>
+          <li class="item"><a href="#">女子公开赛</a></li>
+          <li class="item"><a href="#">王者萌萌假日</a></li>
+        </ul>
+      </div>
+      <div class="news">
+        <ul class="news-title">
+          <li class='title-item'><a href="#">热门</a></li>
+          <li class='title-item'><a href="#">新闻</a></li>
+          <li class='title-item'><a href="#">公告</a></li>
+          <li class='title-item'><a href="#">活动</a></li>
+          <li class='title-item'><a href="#">赛事</a></li>
+          <li class='title-item'><a href="#">...</a></li>
+        </ul>
+        <div class="news-content">
+          <div class="content">
+            <div class="content-wrap">
+              <h3 class="content-title"><a href="#">6月2日全服不停机更新公告</a></h3>
+              <ul class="content-list">
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-hot">热门</span>
+                    <span class="news-info">三街工作室|共创装备即将上线体验服</span>
+                  </a>
+                  <span class="news-date">05/31</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-hot">热门</span>
+                    <span class="news-info">宫本武藏英雄品质升级对应的皮肤调整进展【老亚瑟的答疑时间】</span>
+                  </a>
+                  <span class="news-date">05/31</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-hot">热门</span>
+                    <span class="news-info">【项羽-职棒王牌】局外展示场景方案票选结果公布</span>
+                  </a>
+                  <span class="news-date">05/30</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-hot">热门</span>
+                    <span class="news-info">王者揭秘|揭秘音频设计的故事</span>
+                  </a>
+                  <span class="news-date">05/26</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-notice">公告</span>
+                    <span class="news-info">5月26日全服不停机更新公告</span>
+                  </a>
+                  <span class="news-date">05/25</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-hot">热门</span>
+                    <span class="news-info">王者好物超品日来啦！快来领取属于你的好物buff吧</span>
+                  </a>
+                  <span class="news-date">05/25</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-hot">热门</span>
+                    <span class="news-info">项羽职棒王牌&赵云嘻哈天王皮肤优化计划及进展【老亚瑟的答疑时间】</span>
+                  </a>
+                  <span class="news-date">05/24</span>
+                </li>
+              </ul>
+            </div>
+            <div class="content-wrap">
+              <h3 class="content-title"><a href="#">蔡小姬探班手记|所有等待，终将重逢——时之恋人星元皮肤海报设计故事</a></h3>
+              <ul class="content-list">
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-news">新闻</span>
+                    <span class="news-info">三街工作室|共创装备即将上线体验服！</span>
+                  </a>
+                  <span class="news-date">05/31</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-news">新闻</span>
+                    <span class="news-info">宫本武藏英雄品质升级对应的皮肤调整进展【老亚瑟的答疑时间】</span>
+                  </a>
+                  <span class="news-date">05/31</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-news">新闻</span>
+                    <span class="news-info">【项羽-职棒王牌】局外展示场景方案票选结果公布</span>
+                  </a>
+                  <span class="news-date">05/30</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-news">新闻</span>
+                    <span class="news-info">项羽职棒王牌&赵云嘻哈天王皮肤优化计划及进展【老亚瑟的答疑时间】</span>
+                  </a>
+                  <span class="news-date">05/24</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-news">新闻</span>
+                    <span class="news-info">三街工作室丨普攻装备共创方案来了</span>
+                  </a>
+                  <span class="news-date">05/24</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-news">新闻</span>
+                    <span class="news-info">【项羽-职棒王牌】局外展示场景方案票选活动开启</span>
+                  </a>
+                  <span class="news-date">05/24</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-news">新闻</span>
+                    <span class="news-info">5月3日，我成为王者婚礼的女主角I 《营地·人物》</span>
+                  </a>
+                  <span class="news-date">05/20</span>
+                </li>
+              </ul>
+            </div>
+            <div class="content-wrap">
+              <h3 class="content-title"><a href="#">6月2日局内语音播报、快捷消息异常说明</a></h3>
+              <ul class="content-list">
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-notice">公告</span>
+                    <span class="news-info">6月2日英雄平衡性调整丨盾山、吕布、周瑜优化</span>
+                  </a>
+                  <span class="news-date">06/01</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-notice">公告</span>
+                    <span class="news-info">6月2日全服不停机更新公告</span>
+                  </a>
+                  <span class="news-date">06/01</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-notice">公告</span>
+                    <span class="news-info">6月1日全服不停机更新公告</span>
+                  </a>
+                  <span class="news-date">06/01</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-notice">公告</span>
+                    <span class="news-info">6月1日战令返场礼包异常说明</span>
+                  </a>
+                  <span class="news-date">06/01</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-notice">公告</span>
+                    <span class="news-info">5月31日体验服停机更新公告</span>
+                  </a>
+                  <span class="news-date">05/31</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-notice">公告</span>
+                    <span class="news-info">5月30日体验服停机更新公告</span>
+                  </a>
+                  <span class="news-date">05/30</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-notice">公告</span>
+                    <span class="news-info">5月27日体验服停机更新公告</span>
+                  </a>
+                  <span class="news-date">05/27</span>
+                </li>
+              </ul>
+            </div>
+            <div class="content-wrap">
+              <h3 class="content-title"><a href="#">玉粽袭香千舸竞，端午签到领好礼！</a></h3>
+              <ul class="content-list">
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-active">活动</span>
+                    <span class="news-info">鸿运抽奖，抽六次送一次活动开启公告</span>
+                  </a>
+                  <span class="news-date">05/30</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-active">活动</span>
+                    <span class="news-info">【项羽-职棒王牌】局外展示场景方案票选结果公布</span>
+                  </a>
+                  <span class="news-date">05/30</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-active">活动</span>
+                    <span class="news-info">夏日好礼派送！SNK英雄、皮肤等你签收！</span>
+                  </a>
+                  <span class="news-date">05/25</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-active">活动</span>
+                    <span class="news-info">【项羽-职棒王牌】局外展示场景方案票选活动开启</span>
+                  </a>
+                  <span class="news-date">05/24</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-active">活动</span>
+                    <span class="news-info">【QQ福利】活动页面购买520皮肤抽Q币免单活动</span>
+                  </a>
+                  <span class="news-date">05/20</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-active">活动</span>
+                    <span class="news-info">【挚爱之约，共赴浪漫】活动公告及FAQ</span>
+                  </a>
+                  <span class="news-date">05/20</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-active">活动</span>
+                    <span class="news-info">【微信用户专属】购买孙策&大乔520情侣皮肤抽免单</span>
+                  </a>
+                  <span class="news-date">05/20</span>
+                </li>
+              </ul>
+            </div>
+            <div class="content-wrap">
+              <h3 class="content-title"><a href="#">第八届王者荣耀高校联赛落下战幕！四川托普信息技术职业学院夺得总冠军</a></h3>
+              <ul class="content-list">
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-player">赛事</span>
+                    <span class="news-info">女子公开赛北京分站赛落下帷幕，恭喜NOVA勇夺固定战队区冠军</span>
+                  </a>
+                  <span class="news-date">05/31</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-player">赛事</span>
+                    <span class="news-info">电竞舞台共建活动火热进行中，王者荣耀官方高校社团联盟开启全新招募</span>
+                  </a>
+                  <span class="news-date">05/31</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-player">赛事</span>
+                    <span class="news-info">“Buff”加持荣耀出征，全国大赛大区决赛即将开幕</span>
+                  </a>
+                  <span class="news-date">05/30</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-player">赛事</span>
+                    <span class="news-info">助威王者荣耀高校联赛，电竞舞台共建活动五月热浪来袭</span>
+                  </a>
+                  <span class="news-date">05/24</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-player">赛事</span>
+                    <span class="news-info">李九、天云邀你来上高校解说&主持公开课啦！</span>
+                  </a>
+                  <span class="news-date">05/24</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-player">赛事</span>
+                    <span class="news-info">王者荣耀高校联赛“共建模式”初结硕果 中传“千窟壁画”闪亮北京大区赛</span>
+                  </a>
+                  <span class="news-date">05/24</span>
+                </li>
+                <li class="list-item">
+                  <a href="#">
+                    <span class="news-player">赛事</span>
+                    <span class="news-info">中外音乐碰撞 王者战歌云合奏助力第八届王者荣耀高校联赛</span>
+                  </a>
+                  <span class="news-date">05/20</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="download">
+        <a href="#" class="download-btn"></a>
+        <a href="#" class="guard-btn"></a>
+        <a href="#" class="exprience-btn"></a>
+      </div>
+    </div>
+    <div class="entrace-section"></div>
+    <div class="content-section"></div>
+    <div class="match-section"></div>
+  </div>
+  <script src="./js/banner.js"></script>
+  <script src="./js/news.js"></script>
+</body>
+
+</html>

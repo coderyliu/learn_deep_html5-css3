@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet/less" href="./less/02_less语法-兼容嵌套变量.less">
+
+  <script src="./js/lessc.js"></script>
+</head>
+
+<body>
+  <!-- 1.兼容css:即以前所有的css代码,使用方式在less这一样，都是支持的，并且Less提供了更加丰富的功能，提高开发效率 -->
+  <!-- <div class="container">
+    <div class="box">哈哈哈</div>
+  </div> -->
+
+
+  <!-- 2.变量：在less中定义变量更加方便，没有浏览器的兼容性问题
+        定义格式：@变量名称:变量值;
+  -->
+  <!-- <div class="container">
+    <div class="box">哈哈哈</div>
+  </div> -->
+
+  <!-- 3.嵌套:在Less中之所以更加方便，主要的原因还是less中支持作用域嵌套，维护性强，可读性高，开发效率高 -->
+  <div class="box">
+    <p class="pel">我是p元素</p>
+    <h1>我是h1元素<span class="keyword">关键字</span></h1>
+    <p>我是一个大的段落
+      <a href="#">百度一下</a>
+    </p>
+  </div>
+</body>
+
+</html>

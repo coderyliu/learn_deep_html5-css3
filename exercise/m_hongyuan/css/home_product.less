@@ -1,0 +1,55 @@
+@import url(./variables.less);
+@import url(./common.less);
+@import url(./mixins.less);
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3.2vw;
+  margin-left: 3.2vw;
+  margin-right: 3.2vw;
+  box-sizing: border-box;
+
+  .item {
+    width: 45.53333vw;
+    margin-top: 3.2vw;
+    border-radius: 1.06667vw;
+    background-color: #fff;
+
+    .album {
+      width: 100%;
+      height: 46.53333vw;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .desc {
+      padding: 0 3.2vw;
+
+      .brand {
+        width: 100%;
+        font-size: @smallFontSize;
+        color: #333;
+        padding-left: 5vw;
+        background: url(../img/company_01.png) no-repeat left center/4vw 4vw;
+      }
+
+      .name {
+        width: 45.53333vw;
+        font-size: @smallFontSize;
+        color: #333;
+
+        .nowraps();
+      }
+
+      .rate-price {
+        font-size: @smallFontSize;
+        color: #333;
+      }
+    }
+  }
+}

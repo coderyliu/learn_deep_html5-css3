@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./font_2x7zy1lybo/iconfont.css">
+  <style>
+    /* 这种是伪元素的使用方式 */
+    @font-face {
+      font-family: 'iconFont';
+      src: url(./font_2x7zy1lybo/iconfont.ttf);
+    }
+
+    body {
+      font-family: 'iconFont';
+
+      font-style: normal;
+      font-weight: normal;
+    }
+
+    .box::before {
+      content: '\e60d';
+    }
+
+    .box::after {
+      content: '\e60e';
+    }
+
+    .box {
+      font-size: 49px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 伪元素的使用 -->
+  <i class="box"></i>
+
+  <!-- class类的使用 -->
+  <i class="iconfont icon-a-topliontubiaoku_daohangguanli"></i>
+  <!-- <div class="box">哈哈哈</div> -->
+</body>
+
+</html>

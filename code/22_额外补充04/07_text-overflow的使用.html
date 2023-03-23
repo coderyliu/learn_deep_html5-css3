@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 150px;
+      overflow: hidden;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- text-overflow是用来控制当文字超过盒子大小的时候的剪切方式
+    1.默认就是clip,超出就剪掉，有可能会有字符残缺
+    2.ellipsis,省略的部分显示省略号
+  -->
+
+  <div class="box">
+    嘻嘻嘻 呵呵呵呵 哈哈哈 耶耶耶耶
+  </div>
+</body>
+
+</html>

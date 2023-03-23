@@ -1,0 +1,31 @@
+@import url(./variables.less);
+
+.order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    display: block;
+    text-align: center;
+    padding: 0 1vw;
+  }
+
+  .tag {
+    border: 1px solid @mainColor;
+    border-radius: 1.0067vw;
+
+    font-size: @smallFontSize;
+    color: @mainColor;
+  }
+
+  .ticket {
+    padding-left: 0;
+  }
+
+  .ticket::before {
+    content: '券';
+    padding: 0 1.6vw;
+    background-color: @lightBgColor;
+  }
+}

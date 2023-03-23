@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 1.获取到html元素
+    const htmlEl = document.documentElement
+
+    // 定义resize事件的回调函数
+    function setRemUnit() {
+      // 获取到是视口的宽度
+      const clientWidth = htmlEl.clientWidth
+      // rem的pixel就等于视口宽度的1/10,就这么规定的
+      const remPixel = clientWidth / 10
+
+      htmlEl.style.fontSize = remPixel + 'px'
+    }
+    setRemUnit()
+
+    // 2.监听resize事件
+    window.addEventListener('resize', setRemUnit)
+
+    // 3.监听页面的切换事件
+    window.addEventListener('pageshow', (e) => {
+      if (e.persisted) {
+        setRemUnit()
+      }
+    })
+  </script>
+  <style>
+    /* 弊端，必须要设置body的font-size，否则会继承 */
+    body {
+      font-size: 16px;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <span>哈哈哈</span>
+</body>
+
+</html>

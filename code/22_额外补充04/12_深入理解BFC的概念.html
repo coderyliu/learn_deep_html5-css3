@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: oldlace;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BFC是我们的块级格式上下文，在BFC之内的所有block元素的排列方式是垂直方向上一个挨着一个，外边距决定盒子垂直方向上的距离
+    ，可能会造成外边距折叠问题，-同时也可以利用BFC解决外边距重叠和浮动高度塌陷问题。
+
+    BFC的情况：OFDP   O：overflow不为visible的值  F:浮动   p:absolute或者fixed  d:display为flex/grid/inline-block/table
+    还包括根元素：html也是一个BFC
+  -->
+  <div class="box">
+
+  </div>
+</body>
+
+</html>

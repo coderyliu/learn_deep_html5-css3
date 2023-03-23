@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-download</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .main .news-section {
+      display: flex;
+      width: 100%;
+      height: 342px;
+    }
+
+    .main .news-section .banner {
+      width: 604px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .main .news-section .banner .pics {
+      width: 3045px;
+      height: 298px;
+      position: absolute;
+      display: flex;
+    }
+
+    .main .news-section .banner .pics .pic{
+      display: block;
+    }
+
+    .main .news-section .banner .ban {
+      width: 604px;
+      height: 44px;
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      display: flex;
+      background-color: #0b0a0a;
+    }
+
+    .main .news-section .banner .ban .item {
+      width: 120.8px;
+      height: 100%;
+    }
+
+    .main .news-section .banner .ban .item a {
+      display: block;
+      position: relative;
+      top:50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: #b1b2be;
+      text-align: center;
+    }
+
+    .main .news-section .news {
+      flex: 1;
+      background-color: blueviolet;
+    }
+
+    .main .news-section .download {
+      width: 236px;
+    }
+
+    .main .news-section .download a {
+      display: block;
+      width: 100%;
+    }
+
+    .main .news-section .download .download-btn {
+      height: 128px;
+      background: url(./img/main_sprite.png) no-repeat 0 -219px;
+    }
+
+    .main .news-section .download .guard-btn {
+      height: 106px;
+      background: url(./img/main_sprite.png) no-repeat 0 -350px;
+    }
+
+    .main .news-section .download .exprience-btn {
+      height: 108px;
+      background: url(./img/main_sprite.png) no-repeat 0 -461px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main main_wrapper">
+    <div class="news-section">
+      <div class="banner">
+        <div class="pics">
+          <a href="#" class="pic">
+            <img src="./img/banner1.jpeg" alt="">
+          </a>
+          <a href="#" class="pic">
+            <img src="./img/banner2.jpeg" alt="">
+          </a>
+          <a href="#" class="pic">
+            <img src="./img/banner3.jpeg" alt="">
+          </a>
+          <a href="#" class="pic">
+            <img src="./img/banner4.jpeg" alt="">
+          </a>
+          <a href="#" class="pic">
+            <img src="./img/banner5.jpeg" alt="">
+          </a>
+        </div>
+        <ul class="ban">
+          <li class="item"><a href="#">场景票选结果</a></li>
+          <li class="item"><a href="#">高校联赛总决赛</a></li>
+          <li class="item"><a href="#">大招已经好了</a></li>
+          <li class="item"><a href="#">女子公开赛</a></li>
+          <li class="item"><a href="#">王者萌萌假日</a></li>
+        </ul>
+      </div>
+      <div class="news"></div>
+      <div class="download">
+        <a href="#" class="download-btn"></a>
+        <a href="#" class="guard-btn"></a>
+        <a href="#" class="exprience-btn"></a>
+      </div>
+    </div>
+    <div class="content-section"></div>
+    <div class="match-section"></div>
+  </div>
+  <script src="./js/banner.js"></script>
+</body>
+
+</html>

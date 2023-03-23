@@ -1,0 +1,22 @@
+.main .entrace-section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 28px;
+}
+
+.main .entrace-section .entrace-item {
+  overflow: hidden;
+}
+
+.main .entrace-section .entrace-item a {
+  display: block;
+}
+
+.main .entrace-section .entrace-item a img {
+  display: block;
+  width: 100%;
+}
+
+.main .entrace-section .entrace-item a img:hover {
+  transform: scale(1.1);
+}

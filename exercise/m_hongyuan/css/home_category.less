@@ -1,0 +1,36 @@
+@import url(./variables.less);
+
+.category {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 6.4vw;
+
+  .item {
+    display: block;
+
+    span {
+      display: block;
+      text-align: center;
+    }
+
+    .title {
+      font-size: @bigFontSize;
+      color: #999;
+
+      &:active {
+        color: @mainColor;
+      }
+    }
+
+    .subtitle {
+      font-size: @smallFontSize;
+      color: #999;
+
+      &:active {
+        color: #fff;
+        background-color: @mainColor;
+      }
+    }
+  }
+}

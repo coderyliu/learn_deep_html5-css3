@@ -1,0 +1,35 @@
+// 4.计算
+// less中支持的计算很多：包括单位、颜色等等,有几个规则，计算结果单位以左边为准,有问题时忽略单位计算
+// ?不过Less中的计算有很多问题，了解一下就好了  
+
+// .box {
+//   color: #f00+#bfa;
+// }
+
+// 5.混入mixins
+@import url(./mixins.less);
+
+.box_basic {
+  width: 150px;
+  height: 50px;
+}
+
+.top {
+  width: 150px;
+  height: 50px;
+
+  .nowrap_attr();
+  // todo 使用混入还可以传递参数，就想Js中的函数一样---这样使用的方式是弥补了Less不能自定义函数的缺陷
+  .border_attr(2px, #f00);
+}
+
+.bottom {
+  // todo 映射指的是调用less中的函数，象js一样得到一个对象，通过[]方式使用里面的属性
+  // width: 150px;
+  width: .box_basic[width];
+  height: 50px;
+
+  // todo 这就是使用混入的基本方式
+  .nowrap_attr();
+  .border_attr();
+}

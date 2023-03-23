@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 给box画一个三角形 */
+    .box {
+      width: 0;
+      height: 0;
+
+      border: 50px solid transparent;
+      /* 给box画一个向下的三角形，通过控制border-top/bottom/left/right四个方向的颜色，像素来决定 */
+      border-top-color: orange;
+
+      /* 让三角形旋转 */
+      /* origin决定旋转的中心点，第一个值水平方向,第二个值垂直方向 */
+      transform-origin: center;
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- border其实也是可以画出图形的，比如原型，三角形，正方体等等!!! -->
+  <div class="box">
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 150px;
+      overflow: hidden;
+
+      white-space: nowrap;
+      background-color: #bfa;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 我们的空格/tab/换行符都会有空白字符，但是真实显示到浏览器网页上的却仅仅只有一个空格，这是为什么？ -->
+  <!-- 这其实和浏览器没有关系，而是css的属性white-space的作用：
+    white-space的作用就是两个：处理空白字符和换行规则，默认值是normal表示合并空白所有空白，并且换行
+    如果我们想要改变可以通过white-space来修改，常用的值就是nowrap，表示合并所有空白，但是不换行
+
+    还有其他值：pre表示不合并空白字符并且不会换行
+    pre-wrap:表示不会合并所有空白字符，但是会换行
+  -->
+
+  <div class="box">
+    哈哈哈 呵呵呵呵 嘻嘻嘻 耶耶耶耶
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 1300px;
+      /* height: 200px; */
+      background-color: orange;
+
+      overflow: auto;
+    }
+
+    .item {
+      width: 400px;
+      height: 200px;
+      box-sizing: border-box;
+      float: left;
+      border: 1px solid #fff;
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BFC解决的是浮动带来的高度塌陷问题，而不是position定位带来的高度塌陷 -->
+  <!-- 之所以能解决还是因为BFC的特性带来的：BFC中如果高度是AUTO,那么块级元素的高度是由盒子大小决定，如果包含浮动的元素
+    那么，BFC的高度也会包括浮动元素的高度，行内元素的高度是由行高决定，不会包括定位的元素的高度
+  -->
+
+  <div class="container">
+    <div class="item"></div><div class="item"></div><div class="item"></div>
+  </div>
+</body>
+
+</html>

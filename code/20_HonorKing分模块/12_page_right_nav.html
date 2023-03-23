@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-右侧导航</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    body {
+      width: 100%;
+      height: 3000px;
+    }
+
+    .right-nav {
+      position: fixed;
+      width: 254px;
+      height: 494px;
+      right: 0;
+      background: url(./img/r_navBg.png) no-repeat top left;
+    }
+
+    .right-nav .wxapp {
+      position: relative;
+      width: 165px;
+      height: 145px;
+      background: url(./img/r_dj.png) no-repeat top center;
+    }
+
+    .right-nav .wxapp span {
+      display: block;
+      position: absolute;
+      top:35px;
+      left:10px;
+      width: 88px;
+      height: 36px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #62401b;
+    }
+
+    .right-nav .nav-item {
+      margin-left: 60px;
+    }
+
+    .right-nav .nav-item li a {
+      display: block;
+      width: 117px;
+      height: 38px;
+      text-indent: -9999px;
+    }
+
+    .right-nav .nav-item .item {
+      width: 117px;
+      height: 113px;
+      padding-left: 3px;
+      padding-top: 3px;
+      background: url(./img/right_all.png) no-repeat 0 -3px;
+    }
+
+    .right-nav .nav-item .item .pic {
+      width: 111px;
+      height: 110px;
+    }
+
+    .right-nav .nav-item .wb {
+      background: url(./img/right_all.png) no-repeat -122px -120px;
+    }
+
+    .right-nav .nav-item .wx {
+      background: url(./img/right_all.png) no-repeat -122px -160px;
+    }
+
+    .right-nav .nav-item .wv {
+      background: url(./img/right_all.png) no-repeat -122px 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="right-nav">
+    <div class="wxapp">
+      <span>
+        下载王者营地每天领福利~
+      </span>
+    </div>
+    <ul class="nav-item">
+      <li class="item">
+        <img src="./img/r_code.webp" alt="王者荣耀" class="pic">
+      </li>
+      <li class="wb">
+        <a href="#">官方微博</a>
+      </li>
+      <li class="wx">
+        <a href="#">微信公众号</a>
+      </li>
+      <li class="wv">
+        <a href="#">官方视频号</a>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>
