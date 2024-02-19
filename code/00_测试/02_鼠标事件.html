@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="textInput" />
+    <button id="insertAllButton">@all</button>
+    <button id="insertTimeButton">插入时间</button>
+
+    <script>
+      // 获取输入框和按钮的引用
+      const textInput = document.getElementById("textInput");
+      const insertAllButton = document.getElementById("insertAllButton");
+      const insertTimeButton = document.getElementById("insertTimeButton");
+
+      // 插入 "@all"
+      insertAllButton.addEventListener("click", function () {
+        const currentPosition = textInput.selectionStart;
+        const currentValue = textInput.value;
+        const textBeforeCursor = currentValue.substring(0, currentPosition);
+        const textAfterCursor = currentValue.substring(currentPosition);
+
+        textInput.value = textBeforeCursor + "@all" + textAfterCursor;
+        textInput.setSelectionRange(currentPosition + 4, currentPosition + 4); // 将光标移至插入文本之后
+      });
+
+      // 插入当前时间
+      insertTimeButton.addEventListener("click", function () {
+        const currentPosition = textInput.selectionStart;
+        const currentValue = textInput.value;
+        const textBeforeCursor = currentValue.substring(0, currentPosition);
+        const textAfterCursor = currentValue.substring(currentPosition);
+
+        const currentTime = new Date().toLocaleTimeString(); // 获取当前时间文本
+        textInput.value = textBeforeCursor + currentTime + textAfterCursor;
+        textInput.setSelectionRange(
+          currentPosition + currentTime.length,
+          currentPosition + currentTime.length
+        ); // 将光标移至插入文本之后
+      });
+
+      // 监听键盘事件
+      textInput.addEventListener("keydown", function (event) {
+        if (event.key === "Backspace") {
+          const currentPosition = textInput.selectionStart;
+          const currentValue = textInput.value;
+
+          // 判断光标前面是否是 @all 或当前时间文本
+          if (
+            currentValue.substring(currentPosition - 4, currentPosition) ===
+            "@all"
+          ) {
+            textInput.value =
+              currentValue.substring(0, currentPosition - 4) +
+              currentValue.substring(currentPosition);
+            textInput.setSelectionRange(
+              currentPosition - 4,
+              currentPosition - 4
+            );
+            event.preventDefault(); // 阻止默认删除行为
+          } else {
+            // 检查当前时间文本并删除
+            const currentTime = new Date().toLocaleTimeString();
+            if (
+              currentValue.substring(
+                currentPosition - currentTime.length,
+                currentPosition
+              ) === currentTime
+            ) {
+              textInput.value =
+                currentValue.substring(
+                  0,
+                  currentPosition - currentTime.length
+                ) + currentValue.substring(currentPosition);
+              textInput.setSelectionRange(
+                currentPosition - currentTime.length,
+                currentPosition - currentTime.length
+              );
+              event.preventDefault(); // 阻止默认删除行为
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
