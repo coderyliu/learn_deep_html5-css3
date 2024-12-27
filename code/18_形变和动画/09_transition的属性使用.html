@@ -1,51 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* transition是css的一个过渡属性，目的是告速浏览器为某个元素在有一个属性值变为另一个属性值的时候添加一些动画效果 */
+      /* transition可以设置过度的持续时间，开始时间，过度的曲线频率，要过度的css属性,比如width/left等等 */
+      .container {
+        width: 400px;
+        height: 200px;
+        overflow: hidden;
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    /* transition是css的一个过渡属性，目的是告速浏览器为某个元素在有一个属性值变为另一个属性值的时候添加一些动画效果 */
-    /* transition可以设置过度的持续时间，开始时间，过度的曲线频率，要过度的css属性,比如width/left等等 */
-    .container {
-      width: 400px;
-      height: 200px;
-      overflow: hidden;
+        background-color: orange;
+      }
 
-      background-color: orange;
-    }
+      .container .box {
+        width: 200px;
+        height: 100px;
+        margin-top: 50px;
+        margin-left: 100px;
 
-    .container .box {
-      width: 200px;
-      height: 100px;
-      margin-top: 50px;
-      margin-left: 100px;
+        background-color: purple;
+        /* transition属性 */
+        /* transition-property: ; */
+        /* transition-duration: ; */
+        /* transition-timing-function: ; */
+        /* transition-delay:; */
 
-      background-color: purple;
-      /* transition属性 */
-      /* transition-property: ; */
-      /* transition-duration: ; */
-      /* transition-timing-function: ; */
-      /* transition-delay:; */
+        /* transition的简写属性 */
+        transition: transform 3000 linear;
+      }
 
-      /* transition的简写属性 */
-      transition: transform 3000 linear;
-    }
+      .box:hover {
+        transform: translate(100px) scale(1.2) rotate(45deg);
+      }
+    </style>
+  </head>
 
-    .box:hover {
-      transform: translate(100px) scale(1.2) rotate(45deg);
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="container">
-    <div class="box"></div>
-  </div>
-
-</body>
-
+  <body>
+    <div class="container">
+      <div class="box"></div>
+    </div>
+  </body>
 </html>

@@ -1,108 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>瀑布流的实现</title>
-  <style>
-    *{
-      padding: 0;
-      margin: 0;
-    }
-
-    .container{
-      position: relative;
-      width: 1200px;
-      margin: 100px auto;
-      /* 第一种通过css实现 */
-      /* columns: 5; */
-      /* column-gap: 10px; */
-    }
-
-    .wf-wrapper{
-      position: absolute;
-    }
-
-    .wf-wrapper:nth-child(odd){
-      height: 150px;
-    }
-
-    .wf-wrapper:nth-child(even){
-      height: 200px;
-    }
-
-    .wf-wrapper .wf-img{
-      width: 100%;
-    }
-  </style>
-</head>
-<body>
-  <!-- 内容区宽度固定，高度不固定，从左到右依次排列，第一行排满之后，其余的照片按照高度最低的排 -->
-  <div class="container">
-    <div class="wf-wrapper"><img src="./img/1.jpg" alt="" class="wf-img"></div>
-    <div class="wf-wrapper"><img src="./img/2.jpg" alt="" class="wf-img"></div>
-    <div class="wf-wrapper"><img src="./img/3.jpg" alt="" class="wf-img"></div>
-    <div class="wf-wrapper"><img src="./img/4.jpg" alt="" class="wf-img"></div>
-    <div class="wf-wrapper"><img src="./img/5.jpg" alt="" class="wf-img"></div>
-    <div class="wf-wrapper"><img src="./img/6.jpg" alt="" class="wf-img"></div>
-    <div class="wf-wrapper"><img src="./img/7.jpg" alt="" class="wf-img"></div>
-    <div class="wf-wrapper"><img src="./img/8.jpg" alt="" class="wf-img"></div>
-    <div class="wf-wrapper"><img src="./img/9.jpg" alt="" class="wf-img"></div>
-    <div class="wf-wrapper"><img src="./img/12.jpeg" alt="" class="wf-img"></div>
-    <div class="wf-wrapper"><img src="./img/10.jpg" alt="" class="wf-img"></div>
-    <div class="wf-wrapper"><img src="./img/11.jpg" alt="" class="wf-img"></div>
-    <div class="wf-wrapper"><img src="./img/09.jpg" alt="" class="wf-img"></div>
-  </div>
-
-  <script>
-    function waterfall(opt) {
-      this.columns = opt.columns //瀑布流的列数
-      this.el = document.querySelector(opt.el) //实现瀑布流的外部容器
-      this.allItems = this.el.getElementsByTagName('div') //所有图片的容器
-      this.gap = opt.gap //每列的外边距
-      this.heightArr = [] //更新每列的高度
-      this.itemWidth = (this.el.offsetWidth - (this.columns - 1) * this.gap) / this.columns //图片宽度
-
-      this.init()
-    }
-
-    // 初始化函数
-    waterfall.prototype.init = function() {
-      this.render()
-    }
-
-    // 开始渲染，主要实现
-    waterfall.prototype.render = function() {
-      let item = null
-      let minIndex = -1
-
-      // 找数组中高度最小的索引
-      const getMinHeightIndex = () => this.heightArr.indexOf(Math.min(...this.heightArr))
-
-      // 先布局第一行元素
-      for(let i = 0; i< this.allItems.length; i++){
-        item = this.allItems[i] //当前元素
-        item.style.width = this.itemWidth + 'px' //每个图片的宽度
-        if (i < this.columns){
-          item.style.top = '0px'
-          item.style.left = i * (this.itemWidth + this.gap) + 'px'
-          this.heightArr.push(item.offsetHeight)
-        }else{
-          // 找数组中最小的一列插入图片
-          minIndex = getMinHeightIndex()
-          item.style.left = this.allItems[minIndex].offsetLeft + 'px'
-          item.style.top = this.heightArr[minIndex] + 'px'
-          // 更新数组高度
-          this.heightArr[minIndex] += item.offsetHeight
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>瀑布流的实现</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
       }
-    }
 
-    new waterfall({
-      columns: 5,
-      el: '.container',
-      gap: 10
-    })
-  </script>
-</body>
+      .container {
+        position: relative;
+        width: 1200px;
+        margin: 100px auto;
+        /* 第一种通过css实现 */
+        /* columns: 5; */
+        /* column-gap: 10px; */
+      }
+
+      .wf-wrapper {
+        position: absolute;
+      }
+
+      .wf-wrapper:nth-child(odd) {
+        height: 150px;
+      }
+
+      .wf-wrapper:nth-child(even) {
+        height: 200px;
+      }
+
+      .wf-wrapper .wf-img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 内容区宽度固定，高度不固定，从左到右依次排列，第一行排满之后，其余的照片按照高度最低的排 -->
+    <div class="container">
+      <div class="wf-wrapper">
+        <img src="./img/1.jpg" alt="" class="wf-img" />
+      </div>
+      <div class="wf-wrapper">
+        <img src="./img/2.jpg" alt="" class="wf-img" />
+      </div>
+      <div class="wf-wrapper">
+        <img src="./img/3.jpg" alt="" class="wf-img" />
+      </div>
+      <div class="wf-wrapper">
+        <img src="./img/4.jpg" alt="" class="wf-img" />
+      </div>
+      <div class="wf-wrapper">
+        <img src="./img/5.jpg" alt="" class="wf-img" />
+      </div>
+      <div class="wf-wrapper">
+        <img src="./img/6.jpg" alt="" class="wf-img" />
+      </div>
+      <div class="wf-wrapper">
+        <img src="./img/7.jpg" alt="" class="wf-img" />
+      </div>
+      <div class="wf-wrapper">
+        <img src="./img/8.jpg" alt="" class="wf-img" />
+      </div>
+      <div class="wf-wrapper">
+        <img src="./img/9.jpg" alt="" class="wf-img" />
+      </div>
+      <div class="wf-wrapper">
+        <img src="./img/12.jpeg" alt="" class="wf-img" />
+      </div>
+      <div class="wf-wrapper">
+        <img src="./img/10.jpg" alt="" class="wf-img" />
+      </div>
+      <div class="wf-wrapper">
+        <img src="./img/11.jpg" alt="" class="wf-img" />
+      </div>
+      <div class="wf-wrapper">
+        <img src="./img/09.jpg" alt="" class="wf-img" />
+      </div>
+    </div>
+
+    <script>
+      function waterfall(opt) {
+        this.columns = opt.columns; //瀑布流的列数
+        this.el = document.querySelector(opt.el); //实现瀑布流的外部容器
+        this.allItems = this.el.getElementsByTagName("div"); //所有图片的容器
+        this.gap = opt.gap; //每列的外边距
+        this.heightArr = []; //更新每列的高度
+        this.itemWidth =
+          (this.el.offsetWidth - (this.columns - 1) * this.gap) / this.columns; //图片宽度
+
+        this.init();
+      }
+
+      // 初始化函数
+      waterfall.prototype.init = function () {
+        this.render();
+      };
+
+      // 开始渲染，主要实现
+      waterfall.prototype.render = function () {
+        let item = null;
+        let minIndex = -1;
+
+        // 找数组中高度最小的索引
+        const getMinHeightIndex = () =>
+          this.heightArr.indexOf(Math.min(...this.heightArr));
+
+        // 先布局第一行元素
+        for (let i = 0; i < this.allItems.length; i++) {
+          item = this.allItems[i]; //当前元素
+          item.style.width = this.itemWidth + "px"; //每个图片的宽度
+          if (i < this.columns) {
+            item.style.top = "0px";
+            item.style.left = i * (this.itemWidth + this.gap) + "px";
+            this.heightArr.push(item.offsetHeight);
+          } else {
+            // 找数组中最小的一列插入图片
+            minIndex = getMinHeightIndex();
+            item.style.left = this.allItems[minIndex].offsetLeft + "px";
+            item.style.top = this.heightArr[minIndex] + "px";
+            // 更新数组高度
+            this.heightArr[minIndex] += item.offsetHeight;
+          }
+        }
+      };
+
+      new waterfall({
+        columns: 5,
+        el: ".container",
+        gap: 10
+      });
+    </script>
+  </body>
 </html>
